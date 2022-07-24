@@ -71,7 +71,7 @@
 @code {
   private int currentCount = 0;
   private int increment = 1;
-  private bool shouldPreventDefault = true;
+  // private bool shouldPreventDefault = true;
   private DateTime Today { get; set; } = DateTime.Now;
 
   private void IncrementCount()
@@ -94,12 +94,10 @@
   //}
 
   private string outerPos = "Nothing yet";
-  private void OuterMouseMove(MouseEventArgs e)
-   => outerPos = $"Mouse at {e.ClientX}x{e.ClientY}";
+  private void OuterMouseMove(MouseEventArgs e) => outerPos = $"Mouse at {e.ClientX}x{e.ClientY}";
 
   private string innerPos = "Nothing yet";
-  private void InnerMouseMove(MouseEventArgs e)
-   => innerPos = $"Mouse at {e.ClientX}x{e.ClientY}";
+  private void InnerMouseMove(MouseEventArgs e) => innerPos = $"Mouse at {e.ClientX}x{e.ClientY}";
 
   private void KeyHandler(KeyboardEventArgs e)
   {
@@ -113,8 +111,7 @@
     }
   }
 
-  private string BackgroundColor
-  => (currentCount % 2 == 0) ? "red-background" : "yellow-background";
+  private string BackgroundColor => (currentCount % 2 == 0) ? "red-background" : "yellow-background";
 
   private void AutoIncrement()
   {
