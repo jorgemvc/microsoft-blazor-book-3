@@ -34,14 +34,13 @@
   <h1 class="">Your current order</h1>
 
   @foreach (var (pizza, pos) in State.Basket.Orders.Select(
-(id, pos) => (State.Menu.GetPizza(id), pos)))
-  {
+    (id, pos) => (State.Menu.GetPizza(id), pos))) {
     <div class="row mb-2">
       <div class="col">
-        @pizza.Name
+        @pizza?.Name
       </div>
       <div class="col text-right">
-        @($"{pizza.Price:0.00}")
+        @($"{pizza?.Price:0.00}")
       </div>
       <div class="col"></div>
 
