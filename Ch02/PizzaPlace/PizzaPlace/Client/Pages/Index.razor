@@ -4,13 +4,12 @@
 
 <h1>Our selection of pizzas</h1>
 
-@foreach (var pizza in State.Menu.Pizzas)
-{
+@foreach (var pizza in State.Menu.Pizzas) {
   <div class="row">
     <div class="col">
       @pizza.Name
     </div>
-    <div class="col text-right">
+    <div class="col text-end">
       @($"{pizza.Price:0.00}")
     </div>
     <div class="col"></div>
@@ -19,7 +18,7 @@
          alt="@pizza.Spiciness" />
     </div>
     <div class="col">
-      <button class="btn btn-success pl-4 pr-4"
+      <button class="btn btn-success ps-4 pe-4"
             @onclick="@(() => AddToBasket(pizza))">
         Add
       </button>
@@ -39,7 +38,7 @@
       <div class="col">
         @pizza?.Name
       </div>
-      <div class="col text-right">
+      <div class="col text-end">
         @($"{pizza?.Price:0.00}")
       </div>
       <div class="col"></div>
@@ -63,7 +62,7 @@
 
   <div class="row">
     <div class="col"> Total:</div>
-    <div class="col text-right font-weight-bold"> @($"{State.TotalPrice:0.00}") </div>
+    <div class="col text-end fw-bold"> @($"{State.TotalPrice:0.00}") </div>
     <div class="col"> </div>
     <div class="col"> </div>
     <div class="col"> </div>
